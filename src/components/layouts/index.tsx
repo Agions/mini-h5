@@ -9,7 +9,7 @@ interface INavProps extends NavbarProps {
 const Index: React.FC<INavProps> = ({ title, children }) => {
   return (
     <View>
-      <Navbar title={title}></Navbar>
+      <Navbar title={title} bordered placeholder></Navbar>
       <ScrollView>{children}</ScrollView>
     </View>
   );
