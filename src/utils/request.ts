@@ -3,14 +3,20 @@ import { create, PreQuest } from '@prequest/miniprogram'
 import errorRetryMiddleware from '@prequest/error-retry'
 import timeout from '@prequest/timeout'
 import InterceptorMiddleware from '@prequest/interceptor'
+import { createUpload } from '@prequest/miniprogram-addon'
 import Lock from '@prequest/lock'
 
 declare module '@prequest/types' {
   interface PQRequest {
     skipTokenCheck?: boolean
+    name?: string
+    filePath?: any
+    formData?: Common
+    timeout?: number
+
   }
 }
-
+PreQuest.defaults.baseURL = 'https://jsonplaceholder.typicode.com'
 // 全局配置
 
 // 全局中间件
@@ -19,8 +25,10 @@ PreQuest.use(async (ctx, next) => {
   console.log(ctx.response.data)
 })
 
-export const prequest = create(Taro.request, { baseURL: 'https://jsonplaceholder.typicode.com' })
+export const prequest = create(Taro.request)
 
+
+export const upload = createUpload(Taro.uploadFile)
 // 中间件
 // 错误重试中间件
 const errorRetry = errorRetryMiddleware({

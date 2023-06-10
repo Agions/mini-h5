@@ -2,7 +2,7 @@
   "miniprogramRoot": "./dist",
   "projectname": "mini",
   "description": "小程序项目",
-  "appid": "appid",
+  "appid": "wx9e787357741aafe3",
   "setting": {
     "urlCheck": true,
     "es6": false,

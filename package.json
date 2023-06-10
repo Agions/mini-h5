@@ -45,6 +45,7 @@
     "@prequest/interceptor": "^1.5.2",
     "@prequest/lock": "^1.5.2",
     "@prequest/miniprogram": "^1.5.2",
+    "@prequest/miniprogram-addon": "^1.5.2",
     "@prequest/timeout": "^1.5.2",
     "@reduxjs/toolkit": "^1.9.5",
     "@taroify/core": "^0.1.0-alpha.1",
